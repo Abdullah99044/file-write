@@ -9,7 +9,7 @@ window = tk.Tk()
 
 def log_function(x):
 
-    file = open("actions1.log" , 'a') 
+    file = open("actions1.gitignore" , 'a') 
     if x == 1:
         file.write("Licht is oof!\n")
     else:
