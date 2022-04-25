@@ -1,3 +1,4 @@
+from os.path import exists
 import tkinter as tk
 from tkinter.constants import TRUE, X, Y
 window = tk.Tk()
@@ -7,14 +8,26 @@ window = tk.Tk()
 
 # schijf hier tussen je code
 
-def log_function(x):
+file_exists = exists('actions.log')
 
+if file_exists == False:
+    with open('actions.log' , 'w') as file:
+        file.write('Create new file')
+    
+
+
+
+def log_function(x):
+    file_actions = open('actions.log' , 'a')
     file = open("actions1.gitignore" , 'a') 
     if x == 1:
         file.write("Licht is oof!\n")
+        file_actions.write("Licht is oof!\n")
     else:
         file.write("Licht is on!\n")
+        file_actions.write("Licht is on!\n")
     file.close()
+    file_actions.close()
 
 
 x = TRUE
